@@ -1,4 +1,4 @@
-# Laravel ( 5.2)  with oAuth2.0 server 
+# Laravel ( 5.2 )  with oAuth2.0 server 
 
 [![Build Status](https://travis-ci.org/laravel/framework.svg)](https://travis-ci.org/laravel/framework)
 [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.svg)](https://packagist.org/packages/laravel/framework)
