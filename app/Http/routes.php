@@ -20,11 +20,18 @@ Route::post('oauth/access_token', function() {
     return Response::json(Authorizer::issueAccessToken());
 });
 
-Route::get('api', ['middleware' => 'oauth', function() {
+Route::group(['prefix'=>'api','middleware' => 'oauth'], function() {
  // return the protected resource
  //echo “success authentication”;
- $user_id=Authorizer::getResourceOwnerId(); // the token user_id
- $user=\App\User::find($user_id);// get the user data from database
+ 
+    Route::post('/user', function () {
+        
+        $user_id=Authorizer::getResourceOwnerId(); // the token user_id
+        $user=\App\User::find($user_id);// get the user data from database
 
-return Response::json($user);
-}]);
+        return Response::json($user);
+    });
+ 
+   
+ 
+});
